@@ -1,5 +1,6 @@
 using System;
 using Eto;
+using Eto.Mac;
 using Eto.Forms;
 
 namespace Rhino.VisualStudio.Mac
@@ -16,11 +17,11 @@ namespace Rhino.VisualStudio.Mac
 
 			try
 			{
-				var platform = Platform.Instance;
+				var platform = Eto.Mac.Platform.Instance;
 				if (platform == null)
 				{
 					platform = new Eto.Mac.Platform();
-					Platform.Initialize(platform);
+					Eto.Mac.Platform.Initialize(platform);
 				}
 
 				platform.LoadAssembly(typeof(EtoInitializer).Assembly);

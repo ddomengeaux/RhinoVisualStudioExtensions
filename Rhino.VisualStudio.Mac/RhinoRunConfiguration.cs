@@ -1,5 +1,6 @@
 ﻿using MonoDevelop.Components;
 using MonoDevelop.Ide.Gui.Dialogs;
+using MonoDevelop.Ide.Options;
 using MonoDevelop.Projects;
 
 
@@ -12,7 +13,7 @@ namespace Rhino.VisualStudio.Mac
       return base.CreatePanelWidget();
     }
 
-    public override void Initialize(OptionsDialog dialog, object dataObject)
+    public override void Initialize(IOptionsDialog dialog, object dataObject)
     {
       base.Initialize(dialog, dataObject);
     }

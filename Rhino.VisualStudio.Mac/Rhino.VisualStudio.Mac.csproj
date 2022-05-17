@@ -1,16 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AssemblyTitle>Rhino.VisualStudio.Mac</AssemblyTitle>
     <Company>Robert McNeel &amp; Associates</Company>
     <Copyright>2021 Robert McNeel and Associates</Copyright>
-    <MDCoreVersionOverride>8.8</MDCoreVersionOverride>
     <CreatePackage>True</CreatePackage>
+    <IsAddin>True</IsAddin>
+    <MDBinDir>\Applications\Visual Studio %28Preview%29.app\Contents\MonoBundle</MDBinDir>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MonoDevelop.Addins" Version="0.4.7" />
-    <PackageReference Include="Eto.Forms" Version="2.5.11-dev" />
-    <PackageReference Include="Eto.Platform.XamMac2" Version="2.5.11-dev" />
+    <PackageReference Include="Eto.Forms" Version="2.7.0" />
+    <PackageReference Include="Eto.Platform.XamMac2" Version="2.7.0" />
+    <PackageReference Include="Microsoft.VisualStudioMac.Sdk" Version="17.0.0-preview.7955" />
+    <PackageReference Include="Eto.Platform.Mac64" Version="2.7.0" />
   </ItemGroup>
   <ItemGroup>
     <AddinReference Include="MonoDevelop.CSharpBinding" />
@@ -33,6 +36,8 @@
     <None Remove="Templates\**\*" />
     <None Remove="rhinocommon_addin.png" />
     <None Remove="rhinocommon_addin@2x.png" />
+    <None Remove="Microsoft.VisualStudioMac.Sdk" />
+    <None Remove="Eto.Platform.Mac64" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="rhinocommon_addin.png" />
@@ -46,6 +51,4 @@
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
-
-
 </Project>
